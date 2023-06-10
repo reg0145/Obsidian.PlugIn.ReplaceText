@@ -10,6 +10,9 @@ const DEFAULT_SETTINGS: MyPluginSettings = {
 	mySetting: 'default'
 }
 
+/*
+	참조 : https://github.com/luhaifeng666/obsidian-translator/blob/master/main.ts
+*/
 export default class MyPlugin extends Plugin {
 	settings: MyPluginSettings;
 
@@ -22,15 +25,6 @@ export default class MyPlugin extends Plugin {
 			callback: () => {
 				this.app.commands.executeCommandById('replace-text:replace')
 			}
-		});
-
-		this.addCommand({
-			id: 'sample',
-			name: 'sample',
-			hotkeys: [{ modifiers: ["Mod", "Shift"], key: "a"}],
-			callback: () => {
-				console.log("Hey, you!");
-			},
 		});
 
 		this.addCommand({
